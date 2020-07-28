@@ -21,6 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.gaval.spring.datajpa.model.Tutorial;
 import org.gaval.spring.datajpa.repository.TutorialRepository;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api")
@@ -28,6 +31,8 @@ public class TutorialController {
 
 	@Autowired
 	TutorialRepository tutorialRepository;
+
+	Logger logger = LoggerFactory.getLogger(TutorialController.class);
 
 	@GetMapping("/tutorials")
 	public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title){
@@ -119,5 +124,6 @@ public class TutorialController {
 			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
 		}
 	}
+
 }
 
