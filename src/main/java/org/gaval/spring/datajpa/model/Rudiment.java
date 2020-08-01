@@ -3,15 +3,15 @@ package org.gaval.spring.datajpa.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="tutorials")
-public class Tutorial {
+@Table(name="rudiments")
+public class Rudiment {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column(name="title")
-	private String title;
+	@Column(name="name")
+	private String name;
 
 	@Column(name="description")
 	private String description;
@@ -19,11 +19,11 @@ public class Tutorial {
 	@Column(name="published")
 	private boolean published;
 
-	public Tutorial(){
+	public Rudiment(){
 	}
 
-	public Tutorial(String title, String description, boolean published){
-		this.title = title;
+	public Rudiment(String name, String description, boolean published){
+		this.name = name;
 		this.description = description;
 		this.published = published;
 	}
@@ -32,14 +32,14 @@ public class Tutorial {
 		return id;
 	}
 
-	public String getTitle(){
-		return title;
+	public String getName(){
+		return name;
 	}
 
-	public void setTitle(String title){
-		this.title = title;
+	public void setName(String name){
+		this.name = name;
 	}
-
+	
 	public String getDescription(){
 		return description;
 	}
@@ -48,17 +48,19 @@ public class Tutorial {
 		this.description = description;
 	}
 
-	public boolean isPublished(){
+	public boolean getPublished(){
 		return published;
 	}
 
-	public void setPublished(boolean isPublished){
-		this.published = isPublished;
+	public void setPublished(boolean published){
+		this.published = published;
 	}
 
 	@Override
 	public String toString(){
-		return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
+		return "Rudiment [id=" + id + ". name=" + name + ", desc=" + description + ", published=" + published +"]";
 	}
-
 }
+
+
+
