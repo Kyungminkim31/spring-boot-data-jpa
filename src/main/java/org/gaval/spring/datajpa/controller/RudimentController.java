@@ -27,7 +27,7 @@ public class RudimentController{
 	@Autowired
 	RudimentRepository rudimentRepository;
 
-	Logger logger = LoggerFactory.getLogger(BasicController.class);
+	Logger logger = LoggerFactory.getLogger(RudimentController.class);
 
 	@GetMapping("/rudiments")
 	public ResponseEntity<List<Rudiment>> getAllRudiments(@RequestParam(required = false) String name){
